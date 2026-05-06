@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/etc/api/:path*",
+      "destination": "https://www.aparat.com/etc/api/:path*"
+    },
+    {
+      "source": "/etc/api/:path*/",
+      "destination": "https://www.aparat.com/etc/api/:path*/"
+    },
+    {
+      "source": "/api/fa/v1/:path*",
+      "destination": "https://www.aparat.com/api/fa/v1/:path*"
+    },
+    {
+      "source": "/api/fa/v1/:path*/",
+      "destination": "https://www.aparat.com/api/fa/v1/:path*/"
+    }
+  ]
+}

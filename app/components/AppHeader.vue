@@ -27,6 +27,7 @@
             :loading="searchStore.loading"
             aria-label="Clear input"
             placeholder="جستجو ویدیو..."
+            @update:model-value="onSearchValue"
             @keydown.enter="searchRequest"
           >
             <template
@@ -58,4 +59,8 @@
 
 <script setup>
 const { searchRequest, clearSearch, searchStore } = useSearch()
+
+function onSearchValue(value) {
+  if (!value) clearSearch()
+}
 </script>

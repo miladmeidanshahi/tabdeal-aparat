@@ -12,7 +12,7 @@
       />
     </div>
 
-    <div class="md:opacity-0 absolute bottom-0 left-0 right-0 py-2 px-3 md:py-6 md:px-12 transition-all duration-300 group-focus/video:opacity-100 md:group-hover/video:opacity-100">
+    <div class="md:opacity-0 absolute bottom-0 left-0 right-0 py-2 px-3 md:py-6 md:px-12 transition-all duration-300 group-focus/video:opacity-100 md:group-hover/video:opacity-100 bg-linear-to-t from-secondary">
       <USlider
         v-model="currentTime"
         :max="duration"

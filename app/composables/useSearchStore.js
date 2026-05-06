@@ -31,6 +31,7 @@ export function useSearch() {
         baseURL: config.public.apiBase,
         query: {
           channel: 'tabdealplatform',
+          refererRef: 'search',
           search: searchStore.value.text
         }
       })

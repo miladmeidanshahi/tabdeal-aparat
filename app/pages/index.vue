@@ -26,7 +26,7 @@
               :id="video.uid"
               :key="video.id"
               :title="video.title"
-              :visit="video.visit_cnt"
+              :visit="formatVisits(video.visit_cnt)"
               :poster="video.big_poster"
               :duration="video.duration"
               :username="video.username"

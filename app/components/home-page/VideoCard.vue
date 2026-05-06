@@ -71,7 +71,7 @@ const {
 } = defineProps({
   id: String,
   title: String,
-  visit: Number,
+  visit: [Number, String],
   poster: String,
   duration: [Number, String],
   username: String,
