@@ -8,11 +8,11 @@
     }"
   >
     <template #header>
-      <USkeleton class="w-full h-full rounded-lg" />
+      <USkeleton class="w-full h-full aspect-video rounded-lg" />
     </template>
 
     <template #title>
-      <USkeleton class="h-7 w-100" />
+      <USkeleton class="h-7 w-xs" />
     </template>
 
     <template #authors>

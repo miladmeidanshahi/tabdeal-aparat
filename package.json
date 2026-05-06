@@ -11,9 +11,12 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
+    "@iconify-json/clarity": "^1.2.4",
     "@iconify-json/lucide": "^1.2.105",
     "@iconify-json/simple-icons": "^1.2.80",
+    "@nuxt/hints": "1.1.1",
     "@nuxt/ui": "^4.7.1",
+    "@vueuse/nuxt": "14.3.0",
     "dayjs-nuxt": "2.1.11",
     "jalali-plugin-dayjs": "^1.1.4",
     "nuxt": "^4.4.2",
