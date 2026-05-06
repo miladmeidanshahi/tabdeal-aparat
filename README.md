@@ -1,4 +1,4 @@
-# Nuxt Starter Template
+# Tabdeal Aparat
 
 [![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
 
@@ -11,7 +11,7 @@ Use this template to get started with [Nuxt UI](https://ui.nuxt.com) quickly.
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-dark.png">
     <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-    <img alt="Nuxt Starter Template" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png" width="830" height="466">
+    <img alt="Tabdeal Aparat" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png" width="830" height="466">
   </picture>
 </a>
 

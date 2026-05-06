@@ -6,6 +6,7 @@ const useSearchStore = () => useState('searchStore', () => reactive({
 }))
 
 export function useSearch() {
+  const config = useRuntimeConfig()
   const { $api } = useNuxtApp()
   const searchStore = useSearchStore()
 
@@ -27,7 +28,7 @@ export function useSearch() {
 
     try {
       const { included: data } = await $api(API_URL.search(searchStore.value.text), {
-        baseURL: '/api/fa/v1',
+        baseURL: config.public.apiBase,
         query: {
           channel: 'tabdealplatform',
           search: searchStore.value.text
