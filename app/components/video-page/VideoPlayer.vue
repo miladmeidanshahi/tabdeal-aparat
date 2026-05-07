@@ -15,6 +15,9 @@
     <div class="md:opacity-0 absolute bottom-0 left-0 right-0 py-2 px-3 md:py-6 md:px-12 transition-all duration-300 group-focus/video:opacity-100 md:group-hover/video:opacity-100 bg-linear-to-t from-secondary z-10">
       <USlider
         v-model="currentTime"
+        :ui="{
+          track: 'h-1 md:h-2'
+        }"
         :max="duration"
         class="mb-4 cursor-pointer"
         :tooltip="{
@@ -25,7 +28,7 @@
         @update:model-value="onSeeking"
       />
 
-      <div class="flex items-center flex-row-reverse gap-4">
+      <div class="flex items-center flex-row-reverse gap-2 md:gap-4">
         <UButton
           :icon="playing ? 'lucide:pause' : 'lucide:play'"
           variant="ghost"
@@ -54,7 +57,7 @@
           </div>
         </div>
 
-        <div class="text-white">
+        <div class="text-xs md:text-base text-white">
           {{ formatDuration(duration) }} / {{ formatDuration(currentTime) }}
         </div>
 
@@ -76,7 +79,7 @@
             <UButton
               icon="lucide:sliders-horizontal"
               variant="ghost"
-              class="text-white cursor-pointer"
+              class="text-xs md:text-base text-white cursor-pointer"
               :label="state.quality"
             />
           </ClientOnly>
@@ -113,13 +116,15 @@
     >
       <UIcon
         name="svg-spinners:180-ring-with-bg"
-        class="size-30"
+        class="size-10 md:size-20"
       />
     </div>
   </div>
 </template>
 
 <script setup>
+import { breakpointsTailwind } from '@vueuse/core'
+
 const { poster, qualities } = defineProps({
   poster: String,
   qualities: Array
@@ -137,6 +142,7 @@ const qualityMap = computed(() => qualities.reduce((map, quality) => {
 }, {}))
 
 const video = useTemplateRef('video')
+const breakpoints = useBreakpoints(breakpointsTailwind, { ssrWidth: 768 })
 const { downlink } = useNetwork()
 const videoWrapper = useTemplateRef('video-wrapper')
 const videoSrc = computed(() => video.value?.src[state.quality])
@@ -153,6 +159,8 @@ const volumnIcon = computed(() => {
   else if (volume.value <= 0.6 && volume.value >= 0.3) return 'lucide:volume-1'
   else return 'lucide:volume'
 })
+
+const isMobile = computed(() => breakpoints.smaller('md'))
 
 watch(downlink, (value) => {
   if (value < 2) {

@@ -4,9 +4,7 @@
   <UApp :locale="fa_ir">
     <AppHeader />
 
-    <UMain>
-      <NuxtPage />
-    </UMain>
+    <NuxtPage />
   </UApp>
 </template>
 
