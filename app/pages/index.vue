@@ -1,6 +1,6 @@
 <template>
   <UPage>
-    <UPageSection :ui="{ container: 'lg:py-16' }">
+    <UPageSection :ui="{ container: 'py-8 lg:py-16' }">
       <UBlogPosts class="lg:gap-y-8">
         <LazyHomePageSkeleton v-if="pending || searchStore.loading" />
 
@@ -64,6 +64,13 @@ definePageMeta({
   searchBar: true
 })
 
+const path = useRoute().path
+useHead({
+  link: {
+    rel: 'canonical',
+    href: path
+  }
+})
 const profile = useProfileStore()
 const { searchStore } = useSearch()
 

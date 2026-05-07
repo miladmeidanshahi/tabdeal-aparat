@@ -9,6 +9,7 @@
   --color-neutral: #2C2E30;
   --color-secondary: #2F3337;
   --color-gray: #4F5154;
+  --color-transparent: transparent;
 }
 
 :root {

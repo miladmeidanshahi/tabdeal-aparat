@@ -1,17 +1,19 @@
 <template>
   <UPage>
-    <UPageSection :ui="{ container: 'lg:py-16' }">
+    <UPageSection :ui="{ container: 'py-6 lg:py-16' }">
       <UCard
-        :ui="{ body: 'sm:p-4' }"
+        :ui="{
+          body: 'p-0 sm:p-4',
+          root: 'ring-0 md:ring-1'
+        }"
         class="rounded-2xl"
       >
         <VideoPageSkeleton v-if="pending" />
 
         <template v-else>
           <VideoPageVideoPlayer
-            :src="data.file_link"
-            :quality="data.file_link_all"
             :poster="data.big_poster"
+            :qualities="data.file_link_all"
           />
 
           <div class="mt-8">
@@ -92,10 +94,18 @@ definePageMeta({
   searchBar: false
 })
 
-const { id } = useRoute().params
+const { params, fullPath } = useRoute()
+useHead({
+  link: {
+    rel: 'canonical',
+    href: fullPath
+  }
+})
 const profile = useProfileStore()
 const likeStore = useLikeStorage()
 const { searchRequest, searchStore } = useSearch()
+
+const id = params.id
 
 const { data, pending } = await useAPI(() => API_URL.videoById(id), {
   lazy: true,
