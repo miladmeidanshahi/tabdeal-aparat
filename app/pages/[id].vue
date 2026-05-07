@@ -94,20 +94,19 @@ definePageMeta({
   searchBar: false
 })
 
-const { params, fullPath } = useRoute()
+const { id: pageId } = useRoute().params
+
 useHead({
   link: {
     rel: 'canonical',
-    href: fullPath
+    href: `http://ir.pingwatch.ir/${pageId}`
   }
 })
 const profile = useProfileStore()
 const likeStore = useLikeStorage()
 const { searchRequest, searchStore } = useSearch()
 
-const id = params.id
-
-const { data, pending } = await useAPI(() => API_URL.videoById(id), {
+const { data, pending } = await useAPI(() => API_URL.videoById(pageId), {
   lazy: true,
   responseType: 'json',
   transform: ({ video }) => video

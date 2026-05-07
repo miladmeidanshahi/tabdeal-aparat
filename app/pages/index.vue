@@ -1,5 +1,8 @@
 <template>
   <UPage>
+    <h1 class="hidden">
+      کانال صرافی ارز دیجیتال تبدیل
+    </h1>
     <UPageSection :ui="{ container: 'py-8 lg:py-16' }">
       <UBlogPosts class="lg:gap-y-8">
         <LazyHomePageSkeleton v-if="pending || searchStore.loading" />
@@ -64,11 +67,10 @@ definePageMeta({
   searchBar: true
 })
 
-const path = useRoute().path
 useHead({
   link: {
     rel: 'canonical',
-    href: path
+    href: 'http://ir.pingwatch.ir'
   }
 })
 const profile = useProfileStore()
@@ -80,6 +82,7 @@ const state = reactive({
 })
 
 const { data: videos, pending } = await useAPI(() => API_URL.videos({ offset: (state.page - 1) * state.perpage }), {
+  lazy: true,
   responseType: 'json'
 })
 

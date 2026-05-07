@@ -72,12 +72,14 @@
             sideOffset: 10
           }"
         >
-          <UButton
-            icon="lucide:sliders-horizontal"
-            variant="ghost"
-            class="text-white cursor-pointer"
-            :label="state.quality"
-          />
+          <ClientOnly>
+            <UButton
+              icon="lucide:sliders-horizontal"
+              variant="ghost"
+              class="text-white cursor-pointer"
+              :label="state.quality"
+            />
+          </ClientOnly>
 
           <template #content>
             <div class="flex flex-col gap-2 p-2">

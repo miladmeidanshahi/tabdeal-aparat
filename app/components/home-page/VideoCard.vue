@@ -13,7 +13,7 @@
           :alt="title"
           :src="poster"
           class="inline-full aspect-video rounded-lg transform transition-transform duration-200 group-hover/blog-post:scale-101 bg-secondary"
-          loading="lazy"
+          fetchpriority="high"
         >
         <UBadge
           :label="$dayjs(duration * 1000).utc().format(`${duration > 3600 ? 'HH:mm:ss' : 'mm:ss'}`)"

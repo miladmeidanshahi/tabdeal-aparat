@@ -24,13 +24,12 @@ export default defineNuxtConfig({
   },
 
   devtools: {
-    enabled: false
+    enabled: true
   },
 
   css: ['~/assets/css/main.css'],
 
   routeRules: {
-    // '/': { prerender: true },
     '/etc/api/**': {
       proxy: 'https://www.aparat.com/etc/api/**'
     },
